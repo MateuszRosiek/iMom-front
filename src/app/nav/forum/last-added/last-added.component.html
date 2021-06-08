@@ -1,0 +1,13 @@
+<div>
+  <h3>Last Added</h3>
+  <div *ngFor="let question of lastAddedQuestion">
+    <mat-card class="question-card">
+      <div class="last-content">
+        <button mat-stroked-button color="primary" [routerLink] = "['/forum-question', question.id]">{{question.questionTitle}}</button>
+        <h3>Author: {{question.author}}</h3>
+        <p><mat-icon class="material-icons menu-icon">thumb_up_off_alt</mat-icon>{{question.likesQuantity}}</p>
+        <p><mat-icon class="material-icons menu-icon">question_answer</mat-icon>{{question.forumAnswer.length}}</p>
+      </div>
+    </mat-card>
+  </div>
+</div>

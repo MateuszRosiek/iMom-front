@@ -1,0 +1,33 @@
+<mat-card class="view-port">
+  <button mat-raised-button color="primary" (click)="addAnswerDialog()">Add Answer</button>
+  <br>
+  <div *ngIf="question">
+    <mat-card class="question-card">
+      <h2>{{question.questionTitle}}</h2>
+      <br>
+      <h2>{{question.question}}</h2>
+      <h3>Author: {{question.author}}</h3>
+      <p><mat-icon class="material-icons menu-icon">thumb_up_off_alt</mat-icon>{{question.likesQuantity}}</p>
+    </mat-card>
+    <div *ngIf="question.forumAnswer.length > 0; else elseBlock">
+      <br>
+      <h1>Answers:</h1>
+      <br>
+      <div *ngFor="let answer of question.forumAnswer">
+        <mat-card class="question-card">
+          <h2>{{answer.answer}}</h2>
+          <h3>Author: {{answer.author}}</h3>
+          <p><mat-icon class="material-icons menu-icon">thumb_up_off_alt</mat-icon>{{answer.likesQuantity}}</p>
+        </mat-card>
+        <br>
+    </div>
+      </div>
+
+        <ng-template #elseBlock>
+          <br>
+          <h1>To pytanie nie ma jeszcze żadnej odpowiedzi</h1>
+        </ng-template>
+      </div>
+
+
+</mat-card>

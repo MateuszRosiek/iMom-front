@@ -1,0 +1,8 @@
+<mat-card class="view-port">
+  <button mat-raised-button color="primary" (click)="addQuestionDialog()">Add Question</button>
+  <div class="user-q-container">
+    <app-user-topics [userQuestions] = "userQuestions" ></app-user-topics>
+    <app-top-questions [topQuestions] = "forumQuestions"></app-top-questions>
+  </div>
+
+</mat-card>

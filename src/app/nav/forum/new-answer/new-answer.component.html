@@ -1,0 +1,10 @@
+<mat-card>
+  <form class="example-form"  (ngSubmit)="submitted()" #userForm="ngForm" [formGroup]="answerForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Answer</mat-label>
+      <input matInput placeholder="" value="" name="newAnswer.answer"  formControlName="answer">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" type="submit" mat-dialog-close [disabled]="!userForm.form.valid">Save</button>
+  </form>
+</mat-card>
